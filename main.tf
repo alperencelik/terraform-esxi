@@ -10,13 +10,13 @@ provider "esxi" {
 
 variable "small" {
   default = [
-    "kubernetes-master",
+    "kubernetes-master", "gitlab-runner-master",
 	]
 }
 
 variable "medium" {
   default = [
-    "Gitlab","kubernetes-worker-1","kubernetes-worker-2","kubernetes-worker-3",
+    "Gitlab","kubernetes-worker-1","kubernetes-worker-2","kubernetes-worker-3","gitlab-runner-worker"
 	]
 }
 
