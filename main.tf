@@ -16,7 +16,7 @@ variable "small" {
 
 variable "medium" {
   default = [
-    "Gitlab","kubernetes-worker-1","kubernetes-worker-2","kubernetes-worker-3","gitlab-runner-worker"
+    "Gitlab","kubernetes-worker-1","kubernetes-worker-2","kubernetes-worker-3","gitlab-runner-worker","docker-host"
 	]
 }
 
