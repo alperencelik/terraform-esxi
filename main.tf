@@ -10,7 +10,7 @@ provider "esxi" {
 
 variable "small" {
   default = [
-    "kubernetes-master", "gitlab-runner-master",
+    "kubernetes-master", "gitlab-runner-master", "nagios",
 	]
 }
 
