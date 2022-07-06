@@ -28,8 +28,8 @@ resource "esxi_guest" "medium" {
   guest_name  = "${var.medium[count.index]}"  
   disk_store = "datastore1"
   resource_pool_name = "/"
-  memsize            = "${var.specs-medium-mem}"
-  numvcpus           = "${var.specs-medium-cpu"
+  memsize            = "${var.specs.medium-mem}"
+  numvcpus           = "${var.specs.medium-cpu}"
   power              = "on"
   clone_from_vm = "centos7"
   guest_startup_timeout  = 30
