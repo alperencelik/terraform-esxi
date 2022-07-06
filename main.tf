@@ -15,7 +15,7 @@ resource "esxi_guest" "small" {
   numvcpus           = "${var.specs.small-cpu}"
   power              = "on"
   clone_from_vm = "centos7"
-  guest_startup_timeout  = 5
+  guest_startup_timeout  = 30
   guest_shutdown_timeout = 5
 
   network_interfaces {
@@ -32,7 +32,7 @@ resource "esxi_guest" "medium" {
   numvcpus           = "${var.specs-medium-cpu"
   power              = "on"
   clone_from_vm = "centos7"
-  guest_startup_timeout  = 5
+  guest_startup_timeout  = 30
   guest_shutdown_timeout = 5
 
   network_interfaces {
