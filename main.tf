@@ -6,27 +6,13 @@ provider "esxi" {
   esxi_password = var.esxi_password
 }
 
-# small ==> 2cpu 2ram || medium ==> 4cpu 4ram || large 8cpu 4ram || xlarge 8cpu 8ram
-
-variable "small" {
-  default = [
-    "kubernetes-master", "gitlab-runner-master", "nagios",
-	]
-}
-
-variable "medium" {
-  default = [
-    "Gitlab","kubernetes-worker-1","kubernetes-worker-2","kubernetes-worker-3","gitlab-runner-worker","docker-host"
-	]
-}
-
 resource "esxi_guest" "small" {
   count = "${length(var.small)}"
   guest_name  = "${var.small[count.index]}"  
   disk_store = "datastore1"
   resource_pool_name = "/"
   memsize            = "2048"
-  numvcpus           = "2"
+  numvcpus           = "${var.specs.small-cpu}"
   power              = "on"
   clone_from_vm = "centos7"
   guest_startup_timeout  = 5
@@ -53,4 +39,3 @@ resource "esxi_guest" "medium" {
     virtual_network = "VM Network"
   }
 }
-
