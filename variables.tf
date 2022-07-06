@@ -38,7 +38,7 @@ variable "specs" {
   "small-mem" = "2048"
   "small-cpu" = "2"
   "medium-mem" = "4096"
-  "medium-cpu" = "2"
+  "medium-cpu" = "4"
   }
 }
 
