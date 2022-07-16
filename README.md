@@ -11,7 +11,7 @@ Since the provider uses SSH connection to create vm's we need to enable "SSH" on
 
 1. Enable SSH on ESXI host.
   
-  ***https://phoenixnap.com/kb/esxi-enable-ssh***
+          ***https://phoenixnap.com/kb/esxi-enable-ssh***
 
 2. Clone this repository.
 
