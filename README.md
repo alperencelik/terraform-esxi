@@ -19,6 +19,7 @@ Since the provider uses SSH connection to create vm's we need to enable "SSH" on
 
 3. Edit the variables on ***variables.tf***
 
+  `vim variables.tf`
     
 4. Then we are ready to initialize.
 
