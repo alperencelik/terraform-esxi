@@ -9,17 +9,17 @@ provider "esxi" {
 resource "esxi_guest" "small" {
   count = "${length(var.small)}"
   guest_name  = "${var.small[count.index]}"  
-  disk_store = "datastore1"
+  disk_store = var.disk_store
   resource_pool_name = "/"
   memsize            = "${var.specs.small-mem}"
   numvcpus           = "${var.specs.small-cpu}"
   power              = "on"
-  clone_from_vm = "centos7"
-  guest_startup_timeout  = 60
-  guest_shutdown_timeout = 5
+  clone_from_vm = var.clone_from_vm
+  guest_startup_timeout  = var.guest_startup_timeout
+  guest_shutdown_timeout = var.guest_shutdown_timeout
 
   network_interfaces {
-    virtual_network = "VM Network"
+    virtual_network = var.virtual_network
   }
 }
 

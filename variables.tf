@@ -24,11 +24,31 @@ variable "esxi_password" { # Unspecified will prompt
 
 ### Guest VM Variables
 
+variable "disk_store" {
+  default = "datastore1"
+}
+
+variable "resource_pool_name" {
+  default = "/"
+}
+
+variable "clone_from_vm" {
+  default = "centos7"
+}
+
+variable "guest_startup_timeout" {
+  default = "30"
+}
+
+variable "guest_shutdown_timeout" {
+  default = "5"
+}
+
 # small ==> 2cpu 2ram || medium ==> 4cpu 4ram || large 8cpu 4ram || xlarge 8cpu 8ram
 
 variable "small" {
   default = [
-    "kubernetes-master", "gitlab-runner-master", "nagios",
+    "kubernetes-master", "gitlab-runner-master", "nagios", "noobspray-test-1", "noobspray-test-2", "noobspray-test-3"
         ]
 }
 
