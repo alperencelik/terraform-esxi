@@ -44,6 +44,10 @@ variable "guest_shutdown_timeout" {
   default = "5"
 }
 
+variable "virtual_network" {
+  default = "VM Network"
+}
+
 # small ==> 2cpu 2ram || medium ==> 4cpu 4ram || large 8cpu 4ram || xlarge 8cpu 8ram
 
 variable "small" {
