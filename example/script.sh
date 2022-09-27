@@ -45,7 +45,7 @@ case "$1" in
         declare -a ips
         ips[$i]=$(echo $workers | jq .[$i] | awk '{print $1}' | tr -d '"')
         let "index = $i-1"
-        sed -i "s/worker-$i ansible_user=root ansible_host.*/master-$i ansible_user=root ansible_host=${ips[$index]}/g" inventory
+        sed -i "s/worker-$i ansible_user=root ansible_host.*/worker-$i ansible_user=root ansible_host=${ips[$index]}/g" inventory
     done
 
     ansible-playbook kubernetes.yaml 
