@@ -37,7 +37,7 @@ variable "clone_from_vm" {
 }
 
 variable "guest_startup_timeout" {
-  default = "30"
+  default = "45"
 }
 
 variable "guest_shutdown_timeout" {
